@@ -51,5 +51,11 @@ return (get_root(node->parent));
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 const binary_tree_t *second)
 {
+
+if (!first || !second)
+{
+return (NULL);
+}
+
 return (findLCA(get_root((binary_tree_t *)first), first, second));
 }
