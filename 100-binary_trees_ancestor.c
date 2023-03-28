@@ -53,7 +53,7 @@ const binary_tree_t *second)
 {
 if (!first || !second)
 {
-return (first ? first : second);
+return (first ? (binary_tree_t *)first : (binary_tree_t *)second);
 }
 return (findLCA(get_root((binary_tree_t *)first), first, second));
 }
