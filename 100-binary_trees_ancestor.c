@@ -7,8 +7,8 @@
  * Return: If no common ancestors return NULL, else return common ancestor.
  */
 binary_tree_t *findLCA(binary_tree_t *root,
-    const binary_tree_t *first,
-    const binary_tree_t *second)
+const binary_tree_t *first,
+const binary_tree_t *second)
 {
 binary_tree_t *left_lca, *right_lca;
 if (root == NULL)
@@ -30,7 +30,7 @@ return (left_lca ? left_lca : right_lca);
 }
 /**
  * get_root - Finds the root node.
- * @first: Pointer to a node to start search from.
+ * @node: Pointer to a node to start search from.
  * Return: The root node.
  */
 
@@ -49,7 +49,7 @@ return (get_root(node->parent));
  * Return: If no common ancestors return NULL, else return common ancestor.
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-                    const binary_tree_t *second)
+const binary_tree_t *second)
 {
 if (!first || !second)
 {
