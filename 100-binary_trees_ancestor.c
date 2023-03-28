@@ -56,10 +56,6 @@ if (!first || !second)
 {
 return (NULL);
 }
-if (first == second)
-{
-return (first->parent);
-}
 
 return (findLCA(get_root((binary_tree_t *)first), first, second));
 }
