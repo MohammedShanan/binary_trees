@@ -56,7 +56,7 @@ if (!first || !second)
 {
 return (NULL);
 }
-if (!first->parent || !second->parent)
-return (first->parent);
+if (get_root((binary_tree_t *)first) != get_root((binary_tree_t *)second))
+return (NULL);
 return (findLCA(get_root((binary_tree_t *)first), first, second));
 }
