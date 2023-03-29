@@ -14,7 +14,7 @@ if (tree)
 {
 if (tree->n == value)
 {
-return (tree);
+return ((bst_t *)tree);
 }
 else if (tree->n > value)
 {
