@@ -27,7 +27,7 @@ struct binary_tree_s
  */
 typedef struct queue
 {
-    const binary_tree_t *node;
+    const struct binary_tree_s *node;
     struct queue *next;
 } queue;
 
