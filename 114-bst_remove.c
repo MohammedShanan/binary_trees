@@ -13,8 +13,8 @@ root = root->left;
 return (root);
 }
 /**
- * get_min - Removes a node from a binary search tree.
- * @root: A pointer to the root node of the BST to remove a node from.
+ * delete_node - Removes a node from a binary search tree.
+ * @node: A pointer to the root node of the BST to remove a node from.
  * Return: A pointer to the new root node after deletion.
  */
 bst_t *delete_node(bst_t *node)
