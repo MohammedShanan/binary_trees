@@ -1,17 +1,5 @@
 #include "binary_trees.h"
 /**
- * struct binary_tree_s - Binary tree node
- *
- * @node: a binary tree node;
- * @next: pointer to the next node
- */
-typedef struct queue
-{
-const binary_tree_t *node;
-struct queue *next;
-
-} queue;
-/**
  * free_queue - free the queue
  * @head: first node in the queue
  */
@@ -68,7 +56,8 @@ tmp = *head;
 return (tmp);
 }
 /**
- * binary_tree_levelorder - Goes through a binary tree using level-order traversal.
+ * binary_tree_levelorder - Goes through a binary tree using 
+ * level-order traversal.
  * @tree: A pointer to the root node of the tree to traverse.
  * @func: A pointer to a function to call for each node.
  */
