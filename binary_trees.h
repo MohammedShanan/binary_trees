@@ -73,5 +73,7 @@ int binary_tree_is_heap(const binary_tree_t *tree);
 heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
+int *heap_to_sorted_array(heap_t *heap, size_t *size);
 void swap(int *a, int *b);
+size_t _binary_tree_size(const binary_tree_t *tree);
 #endif
