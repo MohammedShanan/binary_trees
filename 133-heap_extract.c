@@ -4,7 +4,17 @@
  * heapify - heapify a subtree .
  * @root: pointer to the root of the heap
  */
-
+/**
+ * _swap- swap two integers.
+ * @a: pointer to the first value.
+ * @b: pointer to the second value.
+ */
+void _swap(int *a, int *b)
+{
+int tmp = *a;
+*a = *b;
+*b = tmp;
+}
 void heapify(heap_t *root)
 {
 if (root && (root->right || root->left))
@@ -13,18 +23,18 @@ if (root->left && root->left->n > root->n)
 {
 if (root->right == NULL || root->left->n > root->right->n)
 {
-swap(&root->n, &root->left->n);
+_swap(&root->n, &root->left->n);
 heapify(root->left);
 }
 else
 {
-swap(&root->n, &root->right->n);
+_swap(&root->n, &root->right->n);
 heapify(root->right);
 }
 }
 else if (root->right && root->right->n > root->n)
 {
-swap(&root->n, &root->right->n);
+_swap(&root->n, &root->right->n);
 heapify(root->right);
 }
 }
