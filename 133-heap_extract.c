@@ -1,9 +1,21 @@
 #include "binary_trees.h"
-
 /**
- * heapify - heapify a subtree .
- * @root: pointer to the root of the heap
+ * _binary_tree_size - Measures the size of a binary tree.
+ * @tree: A pointer to the root node of the tree to measure the size of.
+ * Return: The size of the tree.
  */
+size_t _binary_tree_size(const binary_tree_t *tree)
+{
+size_t size = 0;
+if (tree)
+{
+size++;
+size += _binary_tree_size(tree->left);
+size += _binary_tree_size(tree->right);
+}
+return (size);
+}
+
 /**
  * _swap- swap two integers.
  * @a: pointer to the first value.
@@ -15,6 +27,10 @@ int tmp = *a;
 *a = *b;
 *b = tmp;
 }
+/**
+ * heapify - heapify a subtree .
+ * @root: pointer to the root of the heap
+ */
 void heapify(heap_t *root)
 {
 if (root && (root->right || root->left))
@@ -93,7 +109,7 @@ if (*root == NULL)
 return (0);
 }
 max_num = (*root)->n;
-last_node_indx = binary_tree_size(*root) - 1;
+last_node_indx = _binary_tree_size(*root) - 1;
 last_node = get_last_node(*root, 0, last_node_indx);
 (*root)->n = last_node->n;
 free(last_node);
