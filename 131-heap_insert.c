@@ -28,9 +28,9 @@ int tmp = *a;
 }
 /**
  * heap_insert- Inserts a value in a Max heap.
- * @tree: A double pointer to the root node of the max heap to insert the value.
+ * @root: A double pointer to the root node of the max heap to insert the value
  * @value: The value to store in the node to be inserted.
- * @index: index of the current node been check.
+ * @indx: index of the current node been check.
  * @parent_idx: indx of the parent of the new node/
  * Return: A pointer to the created node, or NULL on failure.
  */
@@ -53,9 +53,9 @@ root->left = new_node;
 else
 {
 l_path = max_heap_insert(root->left, value,
-                2 * indx + 1, parent_idx);
+2 * indx + 1, parent_idx);
 r_path = max_heap_insert(root->right, value,
-                2 * indx + 2, parent_idx);
+2 * indx + 2, parent_idx);
 if (l_path)
 new_node = l_path;
 else if (r_path)
@@ -75,7 +75,7 @@ return (NULL);
 
 /**
  * heap_insert- Inserts a value in a Max heap.
- * @tree: A double pointer to the root node of the max heap to insert the value.
+ * @root: A double pointer to the root node of the max heap to insert the value
  * @value: The value to store in the node to be inserted.
  * Return: A pointer to the created node, or NULL on failure.
  */
@@ -95,5 +95,5 @@ return (new_node);
 }
 size = binary_tree_size(*root) + 1;
 parent_indx = size / 2 - 1;
-return max_heap_insert(*root, value, 0, parent_indx);
+return (max_heap_insert(*root, value, 0, parent_indx));
 }
