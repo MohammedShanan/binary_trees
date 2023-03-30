@@ -21,10 +21,9 @@ if (!array)
 *size = 0;
 return (NULL);
 }
-
-for (i = (*size); i >= 1; i--)
+for (i = 0; i < (*size); i++)
 {
-array[i - 1] = heap_extract(&heap);
+array[i] = heap_extract(&heap);
 }
 return (array);
 }
