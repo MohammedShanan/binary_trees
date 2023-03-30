@@ -1,5 +1,28 @@
 #include "binary_trees.h"
 /**
+ * _binary_tree_node - Creates a binary tree node.
+ * @parent: A pointer to the parent of the node to create.
+ * @value: The value to put in the new node.
+ * Return: If an error occurs - NULL.
+ * Otherwise - a pointer to the new node.
+ */
+binary_tree_t *_binary_tree_node(binary_tree_t *parent, int value)
+{
+binary_tree_t *new_node;
+new_node = malloc(sizeof(binary_tree_t));
+if (new_node == NULL)
+{
+return (NULL);
+}
+new_node->n = value;
+new_node->left = NULL;
+new_node->right = NULL;
+new_node->parent = parent;
+
+return (new_node);
+}
+
+/**
  * binary_tree_size - Measures the size of a binary tree.
  * @tree: A pointer to the root node of the tree to measure the size of.
  * Return: The size of the tree.
@@ -42,7 +65,7 @@ if (root)
 {
 if (indx == parent_idx)
 {
-new_node = binary_tree_node(root, value);
+new_node = _binary_tree_node(root, value);
 if (!new_node)
 return (NULL);
 if (root->left)
@@ -53,9 +76,9 @@ root->left = new_node;
 else
 {
 l_path = max_heap_insert(root->left, value,
-2 * indx + 1, parent_idx);
+            2 * indx + 1, parent_idx);
 r_path = max_heap_insert(root->right, value,
-2 * indx + 2, parent_idx);
+            2 * indx + 2, parent_idx);
 if (l_path)
 new_node = l_path;
 else if (r_path)
@@ -85,7 +108,7 @@ heap_t *new_node;
 size_t parent_indx, size;
 if (*root == NULL)
 {
-new_node = binary_tree_node(NULL, value);
+new_node = _binary_tree_node(NULL, value);
 if (!new_node)
 {
 return (NULL);
