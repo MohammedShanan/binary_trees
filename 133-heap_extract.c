@@ -111,8 +111,16 @@ return (0);
 max_num = (*root)->n;
 last_node_indx = _binary_tree_size(*root) - 1;
 last_node = get_last_node(*root, 0, last_node_indx);
+if (last_node == *root)
+{
+free(*root);
+*root = NULL;
+}
+else
+{
 (*root)->n = last_node->n;
 free(last_node);
 heapify(*root);
+}
 return (max_num);
 }
