@@ -76,9 +76,9 @@ root->left = new_node;
 else
 {
 l_path = max_heap_insert(root->left, value,
-            2 * indx + 1, parent_idx);
+2 * indx + 1, parent_idx);
 r_path = max_heap_insert(root->right, value,
-            2 * indx + 2, parent_idx);
+2 * indx + 2, parent_idx);
 if (l_path)
 new_node = l_path;
 else if (r_path)
