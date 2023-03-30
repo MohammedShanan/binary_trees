@@ -11,15 +11,15 @@ int *array;
 size_t i;
 if (heap == NULL)
 {
-    *size = 0;
-    return (NULL);
+*size = 0;
+return (NULL);
 }
 *size = _binary_tree_size(heap);
 array = malloc(sizeof(int) * (*size));
 if (!array)
 {
-    *size = 0;
-    return (NULL);
+*size = 0;
+return (NULL);
 }
 
 for (i = (*size); i >= 1; i--)
